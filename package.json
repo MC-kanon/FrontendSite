@@ -5,11 +5,14 @@
   "license": "MIT",
   "scripts": {
     "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs",
-    "build": "vuepress build docs",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "deploy": "set NODE_OPTIONS=--openssl-legacy-provider && gh-pages -d docs/.vuepress/dist",
+    "deploy:build": "set NODE_OPTIONS=--openssl-legacy-provider && npm run docs:build && gh-pages -d docs/.vuepress/dist"
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.34",
     "vuepress": "^1.8.2",

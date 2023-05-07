@@ -18,12 +18,11 @@ module.exports = {
     },
     "/en/": {
       lang: "en",
-      description:
-        "A general template for static websites like tutorials, instruction manuals or help documents",
+      description: "A general template for static websites like tutorials, instruction manuals or help documents",
     },
   },
   title: "FrontendSite",
-  base: "/frontend-site/",
+  base: "/FrontendSite/",
   head: [["link", { rel: "icon", href: "./public/favicon.png" }]],
   themeConfig: {
     locales: {
@@ -69,10 +68,7 @@ module.exports = {
     "@vuepress/last-updated": {
       transformer: (timestamp, lang) => {
         if (lang === "zh-CN") {
-          return moment(timestamp)
-            .tz("Asia/Shanghai")
-            .locale(lang)
-            .format("lll");
+          return moment(timestamp).tz("Asia/Shanghai").locale(lang).format("lll");
         } else {
           return moment(timestamp).utc().locale(lang).format("lll");
         }
@@ -94,20 +90,16 @@ module.exports = {
       tags: ($page) => $page.frontmatter.tags,
       twitterCard: (_) => "/favicon.png",
       type: ($page) =>
-        ["articles", "posts", "blog"].some((folder) =>
-          $page.regularPath.startsWith("/" + folder)
-        )
+        ["articles", "posts", "blog"].some((folder) => $page.regularPath.startsWith("/" + folder))
           ? "article"
           : "website",
       url: (_, $site, path) => "https://MC-kanon.github.io/" + path,
-      image: ($page, $site) =>
-        $page.frontmatter.image &&
-        ($site.themeConfig.domain || "") + $page.frontmatter.image,
-      publishedAt: ($page) =>
-        $page.frontmatter.date && new Date($page.frontmatter.date),
+      image: ($page, $site) => $page.frontmatter.image && ($site.themeConfig.domain || "") + $page.frontmatter.image,
+      publishedAt: ($page) => $page.frontmatter.date && new Date($page.frontmatter.date),
       modifiedAt: ($page) => $page.lastUpdated && new Date($page.lastUpdated),
     },
     "vuepress-plugin-smooth-scroll": {},
     "vuepress-plugin-baidu-autopush": {},
   },
+  dest: "./dist",
 };
