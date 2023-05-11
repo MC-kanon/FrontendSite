@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>git基础知识介绍 | FrontendSite</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="./public/favicon.png">
+    <meta name="description" content="一款教程、指导手册或者帮助文档类静态网站通用模板">
+    <meta property="article:modified_time" content="null">
+    <meta property="og:site_name" content="FrontendSite">
+    <meta property="og:title" content="git基础知识介绍">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://MC-kanon.github.io//git/">
+    <meta name="twitter:title" content="git基础知识介绍">
+    <meta name="twitter:url" content="https://MC-kanon.github.io//git/">
+    <meta name="twitter:card" content="/favicon.png">
+    
+    <link rel="preload" href="/FrontendSite/assets/css/0.styles.5be5ae1d.css" as="style"><link rel="preload" href="/FrontendSite/assets/js/app.0db20ae7.js" as="script"><link rel="preload" href="/FrontendSite/assets/js/2.b6bf3e2b.js" as="script"><link rel="preload" href="/FrontendSite/assets/js/16.595cf3ce.js" as="script"><link rel="prefetch" href="/FrontendSite/assets/js/10.aa279536.js"><link rel="prefetch" href="/FrontendSite/assets/js/11.c0d5cd2d.js"><link rel="prefetch" href="/FrontendSite/assets/js/12.697ee176.js"><link rel="prefetch" href="/FrontendSite/assets/js/13.ec9002cd.js"><link rel="prefetch" href="/FrontendSite/assets/js/14.c33d8a1e.js"><link rel="prefetch" href="/FrontendSite/assets/js/15.950e0740.js"><link rel="prefetch" href="/FrontendSite/assets/js/17.46dd41f8.js"><link rel="prefetch" href="/FrontendSite/assets/js/18.89ea5161.js"><link rel="prefetch" href="/FrontendSite/assets/js/19.176f9aca.js"><link rel="prefetch" href="/FrontendSite/assets/js/3.763d9867.js"><link rel="prefetch" href="/FrontendSite/assets/js/4.42136e7a.js"><link rel="prefetch" href="/FrontendSite/assets/js/5.126346db.js"><link rel="prefetch" href="/FrontendSite/assets/js/6.8a81a1b9.js"><link rel="prefetch" href="/FrontendSite/assets/js/7.25531691.js"><link rel="prefetch" href="/FrontendSite/assets/js/8.4e7de589.js"><link rel="prefetch" href="/FrontendSite/assets/js/9.8f49ff08.js">
+    <link rel="stylesheet" href="/FrontendSite/assets/css/0.styles.5be5ae1d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/FrontendSite/" class="home-link router-link-active"><!----> <span class="site-name">FrontendSite</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/FrontendSite/start/" class="nav-link">
+  开始使用
+</a></div><div class="nav-item"><a href="/FrontendSite/guide/" class="nav-link">
+  配置指南
+</a></div><div class="nav-item"><a href="/FrontendSite/html&amp;css/" class="nav-link">
+  HTML &amp; CSS
+</a></div><div class="nav-item"><a href="/FrontendSite/jquery/" class="nav-link">
+  jQuery
+</a></div><div class="nav-item"><a href="/FrontendSite/node/" class="nav-link">
+  Node笔记
+</a></div><div class="nav-item"><a href="/FrontendSite/git/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Git
+</a></div><div class="nav-item"><a href="/FrontendSite/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/FrontendSite/contribute/" class="nav-link">
+  支持我们
+</a></div><div class="nav-item"><a href="https://github.com/MC-kanon/FrontendSite/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/FrontendSite/git/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  🇨🇳 简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/FrontendSite/en/" class="nav-link">
+  en
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/FrontendSite/start/" class="nav-link">
+  开始使用
+</a></div><div class="nav-item"><a href="/FrontendSite/guide/" class="nav-link">
+  配置指南
+</a></div><div class="nav-item"><a href="/FrontendSite/html&amp;css/" class="nav-link">
+  HTML &amp; CSS
+</a></div><div class="nav-item"><a href="/FrontendSite/jquery/" class="nav-link">
+  jQuery
+</a></div><div class="nav-item"><a href="/FrontendSite/node/" class="nav-link">
+  Node笔记
+</a></div><div class="nav-item"><a href="/FrontendSite/git/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Git
+</a></div><div class="nav-item"><a href="/FrontendSite/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/FrontendSite/contribute/" class="nav-link">
+  支持我们
+</a></div><div class="nav-item"><a href="https://github.com/MC-kanon/FrontendSite/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/FrontendSite/git/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  🇨🇳 简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/FrontendSite/en/" class="nav-link">
+  en
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>git基础知识介绍</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/FrontendSite/git/#git基础知识介绍" class="sidebar-link">git基础知识介绍</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/FrontendSite/git/#git配置命令" class="sidebar-link">git配置命令</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/FrontendSite/git/#git境界之练气期" class="sidebar-link">git境界之练气期</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/FrontendSite/git/#git境界之筑基期" class="sidebar-link">git境界之筑基期</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/FrontendSite/git/#git境界之结丹期" class="sidebar-link">git境界之结丹期</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="git基础知识介绍"><a href="#git基础知识介绍" class="header-anchor">#</a> git基础知识介绍</h2> <ol><li>工作区：未被git管理起来的文件。</li> <li>暂存区：在使用git管理项目文件的时候，其本地的项目文件会多出一个.git的文件夹，将这个.git文件夹称之为版本库。其中.git文件夹中包含了两个部分，一个是暂存区（Index或者Stage）,顾名思义就是暂时存放文件的地方，通常使用add命令将工作区的文件添加到暂存区里。</li> <li>本地仓库：.git文件夹里还包括git自动创建的master分支，并且将HEAD指针指向master分支。使用commit命令可以将暂存区中的文件添加到本地仓库中。</li> <li>远程仓库：不是在本地仓库中，项目代码在远程git服务器上，比如项目放在github上，就是一个远程仓库，通常使用clone命令将远程仓库拷贝到本地仓库中，开发后推送到远程仓库中即可；</li></ol> <h2 id="git配置命令"><a href="#git配置命令" class="header-anchor">#</a> git配置命令</h2> <blockquote>
+查询配置信息
+</blockquote> <ol><li><p>列出当前配置：<code>git config --list</code>;</p></li> <li><p>列出repository配置：<code>git config --local --list</code>;</p></li> <li><p>列出全局配置：<code>git config --global --list</code>;</p></li> <li><p>列出系统配置：<code>git config --system --list</code>;</p></li></ol> <blockquote>
+配置用户信息
+</blockquote>
+1. 配置用户名：git config --global user.name &quot;your name&quot;;
+2. 配置用户邮箱：git config --global user.email &quot;youremail@github.com&quot;;
+<blockquote>
+配置ssh密钥
+</blockquote>
+1. ssh-keygen -t rsa  生成sshkey
+2. 一直回车使用默认值
+3. 查找公钥
+   1. window系统： C:\Users\用户\\.ssh\id_rsa.pub
+   2. MAC系统：命令行输入  cat ~/.ssh/id_rsa.pub
+4. 将公钥加入GitHub的ssh中
+5. 可以使用ssh拉代码啦
+<h2 id="git境界之练气期"><a href="#git境界之练气期" class="header-anchor">#</a> git境界之练气期</h2> <div class="language- extra-class"><pre class="language-text"><code>git init  初始化git管理文件
+git clone &lt;远程仓库url&gt;     拉取一个远程仓库(适合本地啥都没有的情况)
+
+工作区提交代码到暂存区
+git add .  提交工作区所有文件到暂存区
+
+暂存区提交到本地仓库
+git commit -m &quot;版本信息&quot;
+
+本地仓库提交到远程仓库
+git push &lt;远程仓库别名&gt; &lt;远程仓库分支&gt;
+
+
+查询信息
+git status  查询当前工作区所有文件的状态
+git diff    比较工作区中当前文件和暂存区之间的差异，也就是修改之后还没有暂存的内容
+git log 查看提交历史
+git reflog 查看版本库（查看所有分支的所有操作记录，包括已经删除的）
+
+
+</code></pre></div><h2 id="git境界之筑基期"><a href="#git境界之筑基期" class="header-anchor">#</a> git境界之筑基期</h2> <div class="language- extra-class"><pre class="language-text"><code>
+暂存区提交到本地仓库
+git commit -m &quot;版本信息&quot;   
+git commit -am &quot;版本信息&quot;  相当于add+commit(将git跟踪的文件直接提交版本库，跳过暂存区，注意：新增的文件不会提交)
+git commit --amend 提交文件时，发现漏掉几个文件可以撤销上一次提交
+
+
+查询信息
+git diff --cache  比较暂存区与上一版本的差异
+
+打标签（用于特定结点，比如说版本上线）
+git tag					列出所有标签
+git tag v1.0		    创建标签
+git push origin v1.5	将标签推送到远程仓库中
+git push origin --tags	将本地所有的标签全部推送到远程仓库中
+
+分支管理
+git branch &lt;branch-name&gt;	  创建分支
+git checkout &lt;branch-name&gt;    切换到其他分支
+git checkout -b &lt;branch-name&gt; 新建并切换到新建分支
+git branch -d &lt;branch-name&gt;   删除分支
+git merge &lt;branch-name&gt;;	将当前分支与指定分支进行合并
+git branch				   显示本地仓库的所有分支
+git fetch &lt;remote-name&gt;/&lt;branch-name&gt; 把远程分支拉倒本地(未合并)
+git merge &lt;remote-name&gt;/&lt;branch-name&gt; 把远程分支合并到当前分支
+git checkout -b &lt;branch-name&gt; &lt;remote-name&gt;/&lt;branch-name&gt;
+创建新的本地分支并把远程分支设置为当前分支的上游分支（之后可以直接git pull和git push简写操作）
+
+查询信息
+git remote -v  查看本地仓库关联的远程仓库url地址
+git remote add [remote-name] [url]  给远程仓库(url地址)取一个名字叫做remote-name
+
+拉取远程仓库分支
+
+git pull [remote-name] [branch-name]
+</code></pre></div><h2 id="git境界之结丹期"><a href="#git境界之结丹期" class="header-anchor">#</a> git境界之结丹期</h2> <div class="language- extra-class"><pre class="language-text"><code>分支管理
+查看上游分支
+git status 、git checkout &lt;branch&gt;
+设置上游分支
+git branch --set-upstream-to=origin/main main   给本地main分支设置远程main分支作为上游分支(远程分支存在的情况)
+git push set-upsteam origin HEAD:main	远程分支不存在的情况
+取消上游分支
+git branch --unset-upstream
+
+stash
+分支管理
+merge
+rebase
+将一个分支里提交的改变移到基底分支上重放一遍：git rebase &lt;rebase-branch&gt; &lt;branch-name&gt;，如git rebase master server，将特性分支server提交的改变在基底分支master上重演一遍；使用rebase操作最大的好处是像在单个分支上操作的，提交的修改历史也是一根线；如果想把基于一个特性分支上的另一个特性分支变基到其他分支上，可以使用--onto操作：git rebase --onto &lt;rebase-branch&gt; &lt;feature branch&gt; &lt;sub-feature-branch&gt;，如git rebase --onto master server client；使用rebase操作应该遵循的原则是：一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行rebase操作；
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/MC-kanon/FrontendSite/edit/main/docs/git/README.md" target="_blank" rel="noopener noreferrer">帮助我们完善文档</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">文档更新于:</span> <span class="time">2023年5月9日 00:26</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/FrontendSite/assets/js/app.0db20ae7.js" defer></script><script src="/FrontendSite/assets/js/2.b6bf3e2b.js" defer></script><script src="/FrontendSite/assets/js/16.595cf3ce.js" defer></script>
+  </body>
+</html>
