@@ -16,8 +16,8 @@
     <meta name="twitter:url" content="https://MC-kanon.github.io//git/">
     <meta name="twitter:card" content="/favicon.png">
     
-    <link rel="preload" href="/FrontendSite/assets/css/0.styles.5be5ae1d.css" as="style"><link rel="preload" href="/FrontendSite/assets/js/app.0db20ae7.js" as="script"><link rel="preload" href="/FrontendSite/assets/js/2.b6bf3e2b.js" as="script"><link rel="preload" href="/FrontendSite/assets/js/16.595cf3ce.js" as="script"><link rel="prefetch" href="/FrontendSite/assets/js/10.aa279536.js"><link rel="prefetch" href="/FrontendSite/assets/js/11.c0d5cd2d.js"><link rel="prefetch" href="/FrontendSite/assets/js/12.697ee176.js"><link rel="prefetch" href="/FrontendSite/assets/js/13.ec9002cd.js"><link rel="prefetch" href="/FrontendSite/assets/js/14.c33d8a1e.js"><link rel="prefetch" href="/FrontendSite/assets/js/15.950e0740.js"><link rel="prefetch" href="/FrontendSite/assets/js/17.46dd41f8.js"><link rel="prefetch" href="/FrontendSite/assets/js/18.89ea5161.js"><link rel="prefetch" href="/FrontendSite/assets/js/19.176f9aca.js"><link rel="prefetch" href="/FrontendSite/assets/js/3.763d9867.js"><link rel="prefetch" href="/FrontendSite/assets/js/4.42136e7a.js"><link rel="prefetch" href="/FrontendSite/assets/js/5.126346db.js"><link rel="prefetch" href="/FrontendSite/assets/js/6.8a81a1b9.js"><link rel="prefetch" href="/FrontendSite/assets/js/7.25531691.js"><link rel="prefetch" href="/FrontendSite/assets/js/8.4e7de589.js"><link rel="prefetch" href="/FrontendSite/assets/js/9.8f49ff08.js">
-    <link rel="stylesheet" href="/FrontendSite/assets/css/0.styles.5be5ae1d.css">
+    <link rel="preload" href="/FrontendSite/assets/css/0.styles.610354e7.css" as="style"><link rel="preload" href="/FrontendSite/assets/js/app.d094e8d2.js" as="script"><link rel="preload" href="/FrontendSite/assets/js/2.b6bf3e2b.js" as="script"><link rel="preload" href="/FrontendSite/assets/js/16.1b8cdf34.js" as="script"><link rel="prefetch" href="/FrontendSite/assets/js/10.aa279536.js"><link rel="prefetch" href="/FrontendSite/assets/js/11.d2ed6145.js"><link rel="prefetch" href="/FrontendSite/assets/js/12.6d5606cb.js"><link rel="prefetch" href="/FrontendSite/assets/js/13.3ce69cc2.js"><link rel="prefetch" href="/FrontendSite/assets/js/14.7535a290.js"><link rel="prefetch" href="/FrontendSite/assets/js/15.5bb1ab23.js"><link rel="prefetch" href="/FrontendSite/assets/js/17.697954f0.js"><link rel="prefetch" href="/FrontendSite/assets/js/18.89ea5161.js"><link rel="prefetch" href="/FrontendSite/assets/js/19.ce6c4a83.js"><link rel="prefetch" href="/FrontendSite/assets/js/3.763d9867.js"><link rel="prefetch" href="/FrontendSite/assets/js/4.42136e7a.js"><link rel="prefetch" href="/FrontendSite/assets/js/5.a39e71ea.js"><link rel="prefetch" href="/FrontendSite/assets/js/6.d2969007.js"><link rel="prefetch" href="/FrontendSite/assets/js/7.311aa4a1.js"><link rel="prefetch" href="/FrontendSite/assets/js/8.30ba467b.js"><link rel="prefetch" href="/FrontendSite/assets/js/9.8f49ff08.js">
+    <link rel="stylesheet" href="/FrontendSite/assets/css/0.styles.610354e7.css">
   </head>
   <body>
     <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/FrontendSite/" class="home-link router-link-active"><!----> <span class="site-name">FrontendSite</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/FrontendSite/start/" class="nav-link">
@@ -86,6 +86,10 @@ git clone &lt;远程仓库url&gt;     拉取一个远程仓库(适合本地啥�
 
 工作区提交代码到暂存区
 git add .  提交工作区所有文件到暂存区
+git add &lt;dir&gt; 添加指定目录到暂存区，包括子目录
+git rm --cached &lt;file&gt;  将file文件从暂存区迁移到工作区 （未跟踪的状态，文件还在）
+git restore --staged &lt;file&gt;	 文件从staged -&gt; unstage
+git rm -f &lt;file&gt;  强制删除文件
 
 暂存区提交到本地仓库
 git commit -m &quot;版本信息&quot;
@@ -93,50 +97,38 @@ git commit -m &quot;版本信息&quot;
 本地仓库提交到远程仓库
 git push &lt;远程仓库别名&gt; &lt;远程仓库分支&gt;
 
-
 查询信息
 git status  查询当前工作区所有文件的状态
 git diff    比较工作区中当前文件和暂存区之间的差异，也就是修改之后还没有暂存的内容
+git diff --cache &lt;file&gt;  比较暂存区与上一版本的差异
 git log 查看提交历史
 git reflog 查看版本库（查看所有分支的所有操作记录，包括已经删除的）
-
-
-</code></pre></div><h2 id="git境界之筑基期"><a href="#git境界之筑基期" class="header-anchor">#</a> git境界之筑基期</h2> <div class="language- extra-class"><pre class="language-text"><code>
-暂存区提交到本地仓库
+git log --pretty=oneline --graph  以图的形式显示版本日志
+</code></pre></div><h2 id="git境界之筑基期"><a href="#git境界之筑基期" class="header-anchor">#</a> git境界之筑基期</h2> <div class="language- extra-class"><pre class="language-text"><code>暂存区提交到本地仓库
 git commit -m &quot;版本信息&quot;   
 git commit -am &quot;版本信息&quot;  相当于add+commit(将git跟踪的文件直接提交版本库，跳过暂存区，注意：新增的文件不会提交)
-git commit --amend 提交文件时，发现漏掉几个文件可以撤销上一次提交
-
-
-查询信息
-git diff --cache  比较暂存区与上一版本的差异
+git commit --amend &lt;file1&gt; &lt;file2&gt; 提交文件时，发现漏掉几个文件可以重新提交
 
 打标签（用于特定结点，比如说版本上线）
-git tag					列出所有标签
+git tag				   列出所有标签
+git tag -d [tag]		删除本地tag
 git tag v1.0		    创建标签
-git push origin v1.5	将标签推送到远程仓库中
-git push origin --tags	将本地所有的标签全部推送到远程仓库中
+git push &lt;remote&gt; v1.0	将标签推送到远程仓库中
+git push &lt;remote&gt; --tags	将本地所有的标签全部推送到远程仓库中
+git push &lt;remote&gt; :refs/tags/[tagName]	删除远程tag
+git show [tag]			查看tag信息
 
 分支管理
+git branch				   显示本地仓库的所有分支
+git branch -r				 显示远程仓库的所有分支
 git branch &lt;branch-name&gt;	  创建分支
 git checkout &lt;branch-name&gt;    切换到其他分支
 git checkout -b &lt;branch-name&gt; 新建并切换到新建分支
-git branch -d &lt;branch-name&gt;   删除分支
-git merge &lt;branch-name&gt;;	将当前分支与指定分支进行合并
-git branch				   显示本地仓库的所有分支
-git fetch &lt;remote-name&gt;/&lt;branch-name&gt; 把远程分支拉倒本地(未合并)
-git merge &lt;remote-name&gt;/&lt;branch-name&gt; 把远程分支合并到当前分支
-git checkout -b &lt;branch-name&gt; &lt;remote-name&gt;/&lt;branch-name&gt;
-创建新的本地分支并把远程分支设置为当前分支的上游分支（之后可以直接git pull和git push简写操作）
+git branch -d &lt;branch-name&gt;   删除本地分支
+git branch -dr &lt;remote/branch&gt; 删除远程分支（用这个）
+git push origin --delete [branch-name] 删除远程分支
+git merge &lt;branch-name&gt;	将当前分支与指定分支进行合并
 
-查询信息
-git remote -v  查看本地仓库关联的远程仓库url地址
-git remote add [remote-name] [url]  给远程仓库(url地址)取一个名字叫做remote-name
-
-拉取远程仓库分支
-
-git pull [remote-name] [branch-name]
-</code></pre></div><h2 id="git境界之结丹期"><a href="#git境界之结丹期" class="header-anchor">#</a> git境界之结丹期</h2> <div class="language- extra-class"><pre class="language-text"><code>分支管理
 查看上游分支
 git status 、git checkout &lt;branch&gt;
 设置上游分支
@@ -145,12 +137,34 @@ git push set-upsteam origin HEAD:main	远程分支不存在的情况
 取消上游分支
 git branch --unset-upstream
 
-stash
+git fetch &lt;remote-name&gt; &lt;branch-name&gt; 把远程分支拉倒本地(未合并)
+git merge &lt;remote-name&gt; &lt;branch-name&gt; 把远程分支合并到当前分支
+git checkout -b &lt;branch-name&gt; &lt;remote-name&gt; &lt;branch-name&gt;
+创建新的本地分支并把远程分支设置为当前分支的上游分支（之后可以直接git pull和git push简写操作）
+
+查询信息
+git remote -v  查看本地仓库关联的远程仓库url地址
+git remote add &lt;remote-name&gt; &lt;url&gt;  给远程仓库(url地址)取一个名字叫做remote-name
+git remote rename origin o  给远程仓库重命名
+
+拉取远程仓库分支
+git pull &lt;remote-name&gt; &lt;branch-name&gt;
+
+撤销操作
+版本库—&gt;缓存区（绿色）	git reset --soft 版本号（版本号可以用HEAD^来代替，表示上一个版本，撤销commit操作）
+版本库-&gt;工作区的tracked位置（红色）    git reset --mix 版本号
+版本库-&gt;工作区的untracked位置         git reset --hard 版本号
+缓存区-&gt;工作区的tracked位置（红色）    绿变红    git reset HEAD
+
+--soft：仅仅是撤回commit操作，您写的代码仍然保留
+--mixed：不删除工作空间改动代码，撤销commit，并且撤销git add操作
+--hard：删除工作空间改动代码，撤销commit，撤销git add，注意完成这个操作后，就恢复到了上一次的commit状态。
+</code></pre></div><h2 id="git境界之结丹期"><a href="#git境界之结丹期" class="header-anchor">#</a> git境界之结丹期</h2> <div class="language- extra-class"><pre class="language-text"><code>stash
 分支管理
 merge
 rebase
-将一个分支里提交的改变移到基底分支上重放一遍：git rebase &lt;rebase-branch&gt; &lt;branch-name&gt;，如git rebase master server，将特性分支server提交的改变在基底分支master上重演一遍；使用rebase操作最大的好处是像在单个分支上操作的，提交的修改历史也是一根线；如果想把基于一个特性分支上的另一个特性分支变基到其他分支上，可以使用--onto操作：git rebase --onto &lt;rebase-branch&gt; &lt;feature branch&gt; &lt;sub-feature-branch&gt;，如git rebase --onto master server client；使用rebase操作应该遵循的原则是：一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行rebase操作；
-</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/MC-kanon/FrontendSite/edit/main/docs/git/README.md" target="_blank" rel="noopener noreferrer">帮助我们完善文档</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">文档更新于:</span> <span class="time">2023年5月9日 00:26</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/FrontendSite/assets/js/app.0db20ae7.js" defer></script><script src="/FrontendSite/assets/js/2.b6bf3e2b.js" defer></script><script src="/FrontendSite/assets/js/16.595cf3ce.js" defer></script>
+将一个分支里提交的改变移到基底分支上重放一遍：git rebase &lt;rebase-branch&gt; &lt;branch-name&gt;，如git rebase master server，将特性分支server提交的改变在基底分支master上重演一遍；使用rebase操作最大的好处是像在单个分支上操作的，提交的修改历史也是一根线；如果想把基于一个特性分支上的另一个特性分支变基到其他分支上，可以使用--onto操作：git rebase --onto &lt;rebase-branch&gt; &lt;feature branch&gt; &lt;sub-feature-branch&gt;，如git rebase --onto master server client；使用rebase操作应该遵循的原则是：一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行rebase操作
+</code></pre></div><p><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener noreferrer">参考1<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/MC-kanon/FrontendSite/edit/main/docs/git/README.md" target="_blank" rel="noopener noreferrer">帮助我们完善文档</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">文档更新于:</span> <span class="time">2023年5月9日 00:26</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/FrontendSite/assets/js/app.d094e8d2.js" defer></script><script src="/FrontendSite/assets/js/2.b6bf3e2b.js" defer></script><script src="/FrontendSite/assets/js/16.1b8cdf34.js" defer></script>
   </body>
 </html>
