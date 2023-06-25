@@ -14,12 +14,8 @@ module.exports = {
     // 作为特例，默认语言可以使用 '/' 作为其路径。
     "/": {
       lang: "zh-CN", // 将会被设置为 <html> 的 lang 属性
-      description: "一款教程、指导手册或者帮助文档类静态网站通用模板",
-    },
-    "/en/": {
-      lang: "en",
-      description: "A general template for static websites like tutorials, instruction manuals or help documents",
-    },
+      description: "前端学习站点，方便查阅前端知识",
+    }
   },
   title: "FrontendSite",
   base: "/FrontendSite/",
@@ -43,12 +39,18 @@ module.exports = {
           },
         },
         nav: [
-          { text: "开始使用", link: "/start/" },
-          { text: "配置指南", link: "/guide/" },
           { text: "HTML & CSS", link: "/html&css/" },
+          { text: "JavaScript", link: "javascript" },
           { text: "jQuery", link: "/jquery/" },
           { text: "Node笔记", link: "/node/" },
           { text: "Git", link: "/git/" },
+          { text: "Typescript", link: "/typescript/" },
+          { text: "构建工具", items: [
+              { text: 'Webpack', link:'/webpack/' },
+              { text: 'rollup', link:'/rollup/' },
+              { text: 'Vite', link:'/vite/' }
+          ] },
+          { text: "前端学习资源", link: "/resources/" },
           { text: "支持我们", link: "/contribute/" },
           { text: "GitHub", link: "https://github.com/MC-kanon/FrontendSite/" },
         ],

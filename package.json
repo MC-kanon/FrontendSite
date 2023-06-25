@@ -8,8 +8,8 @@
     "build": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy": "set NODE_OPTIONS=--openssl-legacy-provider && gh-pages -d docs/.vuepress/dist",
-    "deploy:build": "set NODE_OPTIONS=--openssl-legacy-provider && npm run docs:build && gh-pages -d docs/.vuepress/dist"
+    "deploy": "set NODE_OPTIONS=--openssl-legacy-provider && gh-pages -d dist",
+    "deploy:build": "set NODE_OPTIONS=--openssl-legacy-provider && npm run docs:build && gh-pages -d dist"
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",
