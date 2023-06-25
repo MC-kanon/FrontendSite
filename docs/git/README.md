@@ -78,7 +78,7 @@ git commit -m "版本信息"
 git commit -am "版本信息"  相当于add+commit(将git跟踪的文件直接提交版本库，跳过暂存区，注意：新增的文件不会提交)
 git commit --amend <file1> <file2> 提交文件时，发现漏掉几个文件可以重新提交
 git commit -v  提交时显示所有diff信息
-
+git commit --amend -m '***' 修改上次提交的信息
 
 打标签（用于特定结点，比如说版本上线）
 git tag				   列出所有标签
