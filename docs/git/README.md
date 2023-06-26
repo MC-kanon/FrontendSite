@@ -67,8 +67,7 @@ git reflog 查看版本库（查看所有分支的所有操作记录，包括已
 暂存区提交到本地仓库
 git commit -m "版本信息"   
 git commit -am "版本信息"  相当于add+commit(将git跟踪的文件直接提交版本库，跳过暂存区，注意：新增的文件不会提交)
-git commit --amend 提交文件时，发现漏掉几个文件可以撤销上一次提交
-
+git commit --amend -m '***' 修改上次提交的信息
 
 查询信息
 git diff --cache  比较暂存区与上一版本的差异

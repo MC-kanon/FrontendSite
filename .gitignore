@@ -15,3 +15,4 @@ test/
 dist/
 
 # End of https://www.gitignore.io/api/vuejs
+docs/.vuepress/dist
