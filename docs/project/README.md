@@ -12,18 +12,19 @@
 ## ESLint
 主要作用：代码质量检测
 安装：npm install eslint --save-dev  
+用法：npx eslint .  用eslint检查所有文件  
 配置文件：`.eslintrc.js`  
 在使用npx eslint --init 后，会出现很多用户配置项,根据用户不同的配置，产生不同的配置文件  
 一般默认的选择为以下几个  
-1. 怎样使用ESLint：To check syntax and find problems 检查语法和查找错误
+1. 怎样使用ESLint：To check syntax and find problems 检查语法和查找错误（选这个不让ESLint检查代码风格，不会与Prettier冲突）
 2. 项目模块化类型：javascript modules（import/export） 使用js模块
 3. 项目框架：Vue.js 根据实际情况选择Vue/React
 4. 项目中是否使用了TypeScript No/Yes
 5. 代码运行环境 - Browser/Node
-6. config文件格式 - JavaScript/YAML/JSON
-最后可能会让你选择是否用npm安装插件包
-忽略文件：.eslintignore里面定义的目录和文件都不会被 ESlint 检查
-在注释中也可以选择是否需要ESLint起作用
+6. config文件格式 - JavaScript/YAML/JSON  
+最后可能会让你选择是否用npm安装插件包  
+忽略文件：.eslintignore里面定义的目录和文件都不会被 ESlint 检查  
+在注释中也可以选择是否需要ESLint起作用  
 ```javascript 
 一个.eslintrc.js文件
 module.exports = {
@@ -70,8 +71,9 @@ module.exports = {
 ## prettier
 主要作用：保持代码风格的一致（可能会与ESLint有冲突，用上面方法解决）  
 安装：`npm install prettier --save-dev`  
-配置文件：`prettier.config.js`  
-```javascript prettier.config.js
+用法：`npx prettier --write .` 用prettier检查所有文件  
+配置文件：`.prettierrc.js`  
+```javascript .prettierrc.js
 module.exports = {
   "printWidth": 80, // 每行代码长度（默认80）
   "tabWidth": 2, // 每个tab相当于多少个空格（默认2）
@@ -80,7 +82,6 @@ module.exports = {
   "semi": true, // 声明结尾使用分号(默认true)
   "trailingComma": "all", // 多行使用拖尾逗号（默认none）
   "bracketSpacing": true, // 对象字面量的大括号间使用空格（默认true）
-  "jsxBracketSameLine": false, // 多行JSX中的>放置在最后一行的结尾，而不是另起一行（默认false）
   "arrowParens": "avoid" // 只有一个参数的箭头函数的参数是否带圆括号（默认avoid）
 };
 ```
@@ -99,6 +100,24 @@ module.exports = {
 [prettier仓库](https://github.com/prettier/prettier)  
 [prettier官网](https://prettier.io/)  
 
+## vscode中添加eslint和prettier插件并使用
+ESLint
+1. 添加ESLint插件
+2. 在最顶部搜索setting.json,打开.vscode下面的setting.json，加入这句话
+```
+"editor.codeActionsOnSave": {
+    // For ESLint
+    "source.fixAll.eslint": true,
+}
+```
+prettier
+1. 添加prettier插件
+2. 打开设置--搜索setting.json--勾选Prettier：Require Config
+3. 在最顶部搜索setting.json,打开.vscode下面的setting.json，加入这两句话,意思是使用prettier格式化，并且在保存的时候进行格式化。
+```
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.formatOnSave": true
+```
 ## husky 
 作用：一个git hook，可以在执行git commit检验代码是否符合规范  
 安装：`npm install husky -D`  
