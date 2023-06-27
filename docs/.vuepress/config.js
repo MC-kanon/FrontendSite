@@ -52,6 +52,7 @@ module.exports = {
           ] },
           { text: "前端学习资源", link: "/resources/" },
           { text: "快捷键与编程技巧", link: "/skills/" },
+          { text: "项目规范", link: "/project/" },
           { text: "支持我们", link: "/contribute/" },
           { text: "GitHub", link: "https://github.com/MC-kanon/FrontendSite/" },
         ],
