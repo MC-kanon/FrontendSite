@@ -63,9 +63,9 @@ module.exports = {
 "eslint-config-prettier": "^8.8.0" 关闭eslint中与prettier相互冲突的规则
 "eslint-plugin-prettier": "^4.2.1" 赋予eslint用prettier格式化代码的能力。 安装依赖并修改.eslintrc文件
 ```
-[彻底搞懂 ESLint 和 Prettier](https://juejin.cn/post/6909788084666105864#heading-28)
-[ESLint仓库](https://github.com/eslint/eslint)
-[ESLint官网](https://eslint.org/)
+[彻底搞懂 ESLint 和 Prettier](https://juejin.cn/post/6909788084666105864#heading-28)  
+[ESLint仓库](https://github.com/eslint/eslint)  
+[ESLint官网](https://eslint.org/)  
 
 ## prettier
 主要作用：保持代码风格的一致（可能会与ESLint有冲突，用上面方法解决）  
@@ -180,8 +180,8 @@ module.exports = {
   },
 };
 ```
-[commitlint官网](https://commitlint.js.org/#/)
-[commitlint仓库](https://github.com/conventional-changelog/commitlint)
+[commitlint官网](https://commitlint.js.org/#/)  
+[commitlint仓库](https://github.com/conventional-changelog/commitlint)  
 
 ## commit规范
 我们简单采用一个原则：完成一件事情，就提交一次 commit。而不是等到你写完一整天的代码后，才在下班前只提交一次。  
@@ -225,6 +225,6 @@ subject(必须)
 
 参考链接  
 [【V3 Admin Vite】教程六：前端项目规范](https://juejin.cn/post/7231771821832618043)  
-[统一公司的项目规范](https://juejin.cn/post/7241875166887444541#heading-15)
-[写的一般](https://juejin.cn/post/7080871202402598949#heading-1)
-[规范你的前端团队](https://juejin.cn/post/7245674094493171770#heading-11)
+[统一公司的项目规范](https://juejin.cn/post/7241875166887444541#heading-15)  
+[写的一般](https://juejin.cn/post/7080871202402598949#heading-1)  
+[规范你的前端团队](https://juejin.cn/post/7245674094493171770#heading-11)  
