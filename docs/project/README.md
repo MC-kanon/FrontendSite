@@ -28,32 +28,36 @@
 ```javascript 
 一个.eslintrc.js文件
 module.exports = {
-	env: {
-		// 环境
-		browser: true,
-		es2021: true,
-	},
-	extends: [
-		// 拓展
-		'eslint:recommended', // 官方拓展
-		'plugin:@typescript-eslint/recommended', // 插件拓展
-	],
-	parser: '@typescript-eslint/parser', // 解析器，本解析器支持Ts
-	parserOptions: {
-		// 解析器配置选项
-		ecmaVersion: 12, // 指定es版本
-		sourceType: 'module', // 代码支持es6，使用module
-	},
-	plugins: [
-		// 插件
-		'@typescript-eslint',
-	],
-	rules: {
-		// 规则
-        "indent": ["error", 4], // 拓展或覆盖extends配置的规则
-        "no-console": "off",
-	},
+    env: {
+        browser: true,
+        es2021: true,
+    },
+    extends: [
+		    // 拓展
+        'eslint:recommended', // 官方拓展
+        'plugin:@typescript-eslint/recommended', // 插件拓展
+        'plugin:vue/vue3-essential',
+    ],
+    overrides: [
+        {
+            env: {
+                node: true,
+            },
+            files: ['.eslintrc.{js,cjs}'],
+            parserOptions: {
+                sourceType: 'script',
+            },
+        },
+    ],
+    parserOptions: {
+        ecmaVersion: 'latest',
+        parser: '@typescript-eslint/parser',
+        sourceType: 'module',
+    },
+    plugins: ['@typescript-eslint', 'vue'],  // 插件
+    rules: {},
 };
+
 ```
 
 [解决Eslint 和 Prettier 之间的冲突](https://juejin.cn/post/7012160233061482532) 
@@ -101,7 +105,7 @@ module.exports = {
 [prettier官网](https://prettier.io/)  
 
 ## vscode中添加eslint和prettier插件并使用
-ESLint
+ESLint(我倾向于不加ESLint)
 1. 添加ESLint插件
 2. 在最顶部搜索setting.json,打开.vscode下面的setting.json，加入这句话
 ```
@@ -118,6 +122,7 @@ prettier
 "editor.defaultFormatter": "esbenp.prettier-vscode",
 "editor.formatOnSave": true
 ```
+
 ## husky 
 作用：一个git hook，可以在执行git commit检验代码是否符合规范  
 安装：`npm install husky -D`  
