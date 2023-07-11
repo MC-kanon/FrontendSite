@@ -178,8 +178,9 @@ rebase
 
 参考目录：
 
-[阮一峰-常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)   	[阮一峰-ES6入门教程](https://es6.ruanyifeng.com/) 		[书栈网-Git命令大全](https://www.bookstack.cn/read/git-tutorial/docs-commands-git-stash.md)
-
-[git常用命令](https://juejin.cn/post/6844903598522908686)
-
-[各种工作场景的 git 指令大全](https://juejin.cn/post/7021023267028729887)
+[阮一峰-常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)   	
+[阮一峰-ES6入门教程](https://es6.ruanyifeng.com/) 		
+[书栈网-Git命令大全](https://www.bookstack.cn/read/git-tutorial/docs-commands-git-stash.md)  
+[git常用命令](https://juejin.cn/post/6844903598522908686)  
+[各种工作场景的 git 指令大全](https://juejin.cn/post/7021023267028729887)  
+[廖雪峰Git教程](https://www.bookstack.cn/read/liaoxuefeng-git-2020/002dc8c001053b0b.md)
