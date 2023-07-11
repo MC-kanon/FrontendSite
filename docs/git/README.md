@@ -184,3 +184,7 @@ rebase
 [git常用命令](https://juejin.cn/post/6844903598522908686)  
 [各种工作场景的 git 指令大全](https://juejin.cn/post/7021023267028729887)  
 [廖雪峰Git教程](https://www.bookstack.cn/read/liaoxuefeng-git-2020/002dc8c001053b0b.md)
+[面试题|git秘籍--多人协作冲突](https://juejin.cn/post/6952752045405241358#heading-0)
+[git rebase，看这一篇就够了](https://juejin.cn/post/6969101234338791432)
+[git pull --rebase的正确使用](https://juejin.cn/post/6844903895160881166)
+
