@@ -5,12 +5,72 @@
 + 核心：Vue3全家桶（Pinia，Vue-Router）
 + 构建工具：Vite
 + 类型检查：Typescript
-+ 代码风格：ESLint
++ 代码质量：ESLint
++ CSS预处理器：LESS/SCSS
 
 
+## Vite  
+作用：构建工具
+安装：`npm install vite @vitejs/plugin-vue --save-dev` 提供 Vue 3 单文件组件支持  
+用法：在根目录新建`vite.config.ts`（vite的配置文件）
+```javascript
+vite.config.ts
+import path from 'path'
+
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+    plugins: [vue()],
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'src'),  // 别名配置
+        },
+        extensions: ['.js', '.ts', '.vue']
+    },
+});
+
+```
+
+## Typescript
+作用：代码类型检查
+安装：`npm install typescript @types/node --save-dev`（@types/node是node的类型）  
+用法：在根目录新建`tsconfig.json`（ts的配置文件）,在`src`目录新建`typings.d.ts`(声明.vue单文件)
+```javascript
+tsconfig.json
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"]
+}
+
+typings.d.ts
+/// <reference types="vite/client" />
+declare module '*.vue' {
+    import type { DefineComponent } from 'vue'
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
+    const component: DefineComponent<{}, {}, any>
+    export default component
+  }
+```
 
 ## ESLint
-主要作用：代码质量检测
+作用：代码质量检测
 安装：npm install eslint --save-dev  
 用法：npx eslint .  用eslint检查所有文件  
 配置文件：`.eslintrc.js`  
@@ -246,6 +306,12 @@ subject(必须)
 2. 建议使用中文（感觉中国人用中文描述问题能更清楚一些）。
 3. 结尾不加句号或其他标点符号。
 ```
+
+## Less
+作用：CSS预处理器  
+安装：`npm install less -D`  
+使用：`Vite`内部提供开箱即用的功能，不需要下载`less-loader`  
+[Vite中使用Less](https://cn.vitejs.dev/guide/features.html#css)
 
 参考链接  
 [【V3 Admin Vite】教程六：前端项目规范](https://juejin.cn/post/7231771821832618043)  
