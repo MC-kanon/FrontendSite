@@ -174,7 +174,11 @@ rebase
 
 最好解决冲突的办法就是：每次写代码之前都从远程仓库拉取最新的代码
 
-
+# 更新本地代码
+```
+git fetch upstream   拉下远程代码
+git rebase upstream/mai  进行变基操作，同步代码
+```
 
 参考目录：
 
