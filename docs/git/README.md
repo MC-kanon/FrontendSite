@@ -180,6 +180,9 @@ git fetch upstream   拉下远程代码
 git rebase upstream/mai  进行变基操作，同步代码
 ```
 
+# git插件
+`git graph`
+
 参考目录：
 
 [阮一峰-常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)   	
