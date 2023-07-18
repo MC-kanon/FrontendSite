@@ -42,18 +42,18 @@ module.exports = {
           { text: "HTML & CSS", link: "/html&css/" },
           { text: "JavaScript", link: "javascript" },
           { text: "jQuery", link: "/jquery/" },
-          { text: "Node笔记", link: "/node/" },
+          // { text: "Node笔记", link: "/node/" },
           { text: "Git", link: "/git/" },
           { text: "Typescript", link: "/typescript/" },
-          { text: "构建工具", items: [
-              { text: 'Webpack', link:'/webpack/' },
-              { text: 'rollup', link:'/rollup/' },
-              { text: 'Vite', link:'/vite/' }
-          ] },
+          // { text: "构建工具", items: [
+          //     { text: 'Webpack', link:'/webpack/' },
+          //     { text: 'rollup', link:'/rollup/' },
+          //     { text: 'Vite', link:'/vite/' }
+          // ] },
           { text: "前端学习资源", link: "/resources/" },
           { text: "快捷键与编程技巧", link: "/skills/" },
           { text: "项目规范", link: "/project/" },
-          { text: "支持我们", link: "/contribute/" },
+          // { text: "支持我们", link: "/contribute/" },
           { text: "GitHub", link: "https://github.com/MC-kanon/FrontendSite/" },
         ],
       },
