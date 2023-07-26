@@ -9,10 +9,12 @@
 + CSS预处理器：LESS/SCSS
 
 
-## Vite  
+## Vite
 作用：构建工具
-安装：`npm install vite @vitejs/plugin-vue --save-dev` 提供 Vue 3 单文件组件支持  
+安装：`npm install vite @vitejs/plugin-vue --save-dev` 提供 Vue 3 单文件组件支持
+使用Vite创建新项目：`npm create vite@latest`
 用法：在根目录新建`vite.config.ts`（vite的配置文件）
+
 ```javascript
 vite.config.ts
 import path from 'path'
@@ -35,7 +37,7 @@ export default defineConfig({
 
 ## Typescript
 作用：代码类型检查
-安装：`npm install typescript @types/node --save-dev`（@types/node是node的类型）  
+安装：`npm install typescript @types/node --save-dev`（@types/node是node的类型）
 用法：在根目录新建`tsconfig.json`（ts的配置文件）,在`src`目录新建`typings.d.ts`(声明.vue单文件)
 ```javascript
 tsconfig.json
@@ -71,21 +73,21 @@ declare module '*.vue' {
 
 ## ESLint
 作用：代码质量检测
-安装：npm install eslint --save-dev  
-用法：npx eslint .  用eslint检查所有文件  
-配置文件：`.eslintrc.js`  
-在使用npx eslint --init 后，会出现很多用户配置项,根据用户不同的配置，产生不同的配置文件  
-一般默认的选择为以下几个  
+安装：npm install eslint --save-dev
+用法：npx eslint .  用eslint检查所有文件
+配置文件：`.eslintrc.js`
+在使用npx eslint --init 后，会出现很多用户配置项,根据用户不同的配置，产生不同的配置文件
+一般默认的选择为以下几个
 1. 怎样使用ESLint：To check syntax and find problems 检查语法和查找错误（选这个不让ESLint检查代码风格，不会与Prettier冲突）
 2. 项目模块化类型：javascript modules（import/export） 使用js模块
 3. 项目框架：Vue.js 根据实际情况选择Vue/React
 4. 项目中是否使用了TypeScript No/Yes
 5. 代码运行环境 - Browser/Node
-6. config文件格式 - JavaScript/YAML/JSON  
-最后可能会让你选择是否用npm安装插件包  
-忽略文件：.eslintignore里面定义的目录和文件都不会被 ESlint 检查  
-在注释中也可以选择是否需要ESLint起作用  
-```javascript 
+6. config文件格式 - JavaScript/YAML/JSON
+最后可能会让你选择是否用npm安装插件包
+忽略文件：.eslintignore里面定义的目录和文件都不会被 ESlint 检查
+在注释中也可以选择是否需要ESLint起作用
+```javascript
 一个.eslintrc.js文件
 module.exports = {
     env: {
@@ -115,12 +117,17 @@ module.exports = {
         sourceType: 'module',
     },
     plugins: ['@typescript-eslint', 'vue'],  // 插件
-    rules: {},
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
+      '@typescript-eslint/ban-types': 'off',
+      "vue/multi-word-component-names": "off"   // 组件名可以为一个word
+    },
 };
 
 ```
 
-[解决Eslint 和 Prettier 之间的冲突](https://juejin.cn/post/7012160233061482532) 
+[解决Eslint 和 Prettier 之间的冲突](https://juejin.cn/post/7012160233061482532)
 
 核心就是考下面两个插件
 
@@ -128,15 +135,15 @@ module.exports = {
 "eslint-config-prettier": "^8.8.0" 关闭eslint中与prettier相互冲突的规则
 "eslint-plugin-prettier": "^4.2.1" 赋予eslint用prettier格式化代码的能力。 安装依赖并修改.eslintrc文件
 ```
-[彻底搞懂 ESLint 和 Prettier](https://juejin.cn/post/6909788084666105864#heading-28)  
-[ESLint仓库](https://github.com/eslint/eslint)  
-[ESLint官网](https://eslint.org/)  
+[彻底搞懂 ESLint 和 Prettier](https://juejin.cn/post/6909788084666105864#heading-28)
+[ESLint仓库](https://github.com/eslint/eslint)
+[ESLint官网](https://eslint.org/)
 
 ## prettier
-主要作用：保持代码风格的一致（可能会与ESLint有冲突，用上面方法解决）  
-安装：`npm install prettier --save-dev`  
-用法：`npx prettier --write .` 用prettier检查所有文件  
-配置文件：`.prettierrc.js`  
+主要作用：保持代码风格的一致（可能会与ESLint有冲突，用上面方法解决）
+安装：`npm install prettier --save-dev`
+用法：`npx prettier --write .` 用prettier检查所有文件
+配置文件：`.prettierrc.js`
 ```javascript .prettierrc.js
 module.exports = {
   "printWidth": 80, // 每行代码长度（默认80）
@@ -149,7 +156,7 @@ module.exports = {
   "arrowParens": "avoid" // 只有一个参数的箭头函数的参数是否带圆括号（默认avoid）
 };
 ```
-忽略文件：`.prettierignore`  
+忽略文件：`.prettierignore`
 ```javascript
 /dist/*
 .local
@@ -161,8 +168,8 @@ module.exports = {
 
 /public/*
 ```
-[prettier仓库](https://github.com/prettier/prettier)  
-[prettier官网](https://prettier.io/)  
+[prettier仓库](https://github.com/prettier/prettier)
+[prettier官网](https://prettier.io/)
 
 ## vscode中添加eslint和prettier插件并使用
 ESLint(我倾向于不加ESLint)
@@ -183,9 +190,9 @@ prettier
 "editor.formatOnSave": true
 ```
 
-## husky 
-作用：一个git hook，可以在执行git commit检验代码是否符合规范  
-安装：`npm install husky -D`  
+## husky
+作用：一个git hook，可以在执行git commit检验代码是否符合规范
+安装：`npm install husky -D`
 配置文件：
 ```javascript
 修改 package.json 配置
@@ -195,12 +202,12 @@ prettier
   }
 }
 ```
-[husky仓库](https://github.com/typicode/husky)  
-[husky官网](https://typicode.github.io/husky)  
+[husky仓库](https://github.com/typicode/husky)
+[husky官网](https://typicode.github.io/husky)
 
 ## lint-staged
-场景：针对历史项目使用husky钩子，可能会出现大量的错误，针对这样的痛点，我们需要对增量代码进行检查（即对修改后的文件进行扫描并且使用ESLint检验）  
-作用：识别加入到git stage区的文件，与husky钩子配合使用，完成对增量代码进行检查，对之前历史代码不检查。  
+场景：针对历史项目使用husky钩子，可能会出现大量的错误，针对这样的痛点，我们需要对增量代码进行检查（即对修改后的文件进行扫描并且使用ESLint检验）
+作用：识别加入到git stage区的文件，与husky钩子配合使用，完成对增量代码进行检查，对之前历史代码不检查。
 安装：npm install -D lint-staged
 配置：
 ```javascript
@@ -224,8 +231,8 @@ prettier
 
 ## commitlint
 作用：规范git commit提交的信息
-安装：`npm install -D @commitlint/cli @commitlint/config-conventional`  
-配置：项目目录下建`commitlint.config.js`  
+安装：`npm install -D @commitlint/cli @commitlint/config-conventional`
+配置：项目目录下建`commitlint.config.js`
 使用：在.husky 中新建一个commit-msg
 ```
 . "$(dirname "$0")/_/husky.sh"
@@ -264,20 +271,20 @@ module.exports = {
   },
 };
 ```
-[commitlint官网](https://commitlint.js.org/#/)  
-[commitlint仓库](https://github.com/conventional-changelog/commitlint)  
+[commitlint官网](https://commitlint.js.org/#/)
+[commitlint仓库](https://github.com/conventional-changelog/commitlint)
 
 ## commit规范
-我们简单采用一个原则：完成一件事情，就提交一次 commit。而不是等到你写完一整天的代码后，才在下班前只提交一次。  
-格式：<type>(<scope>): <subject>  
-示范： 
-fix(DAO):用户查询缺少username属性   
-feat(Controller):用户查询接口开发  
+我们简单采用一个原则：完成一件事情，就提交一次 commit。而不是等到你写完一整天的代码后，才在下班前只提交一次。
+格式：<type>(<scope>): <subject>
+示范：
+fix(DAO):用户查询缺少username属性
+feat(Controller):用户查询接口开发
 
 ```
-type(必须)  
-用于说明git commit的类别，只允许使用下面的标识。  
-feat：新功能（feature）。  
+type(必须)
+用于说明git commit的类别，只允许使用下面的标识。
+feat：新功能（feature）。
 fix/to：修复bug，可以是QA发现的BUG，也可以是研发自己发现的BUG。
 fix：产生diff并自动修复此问题。适合于一次提交直接修复问题
 to：只产生diff不自动修复此问题。适合于多次提交。最终修复问题提交时使用fix
@@ -308,13 +315,13 @@ subject(必须)
 ```
 
 ## Less
-作用：CSS预处理器  
-安装：`npm install less -D`  
-使用：`Vite`内部提供开箱即用的功能，不需要下载`less-loader`  
+作用：CSS预处理器
+安装：`npm install less -D`
+使用：`Vite`内部提供开箱即用的功能，不需要下载`less-loader`
 [Vite中使用Less](https://cn.vitejs.dev/guide/features.html#css)
 
-参考链接  
-[【V3 Admin Vite】教程六：前端项目规范](https://juejin.cn/post/7231771821832618043)  
-[统一公司的项目规范](https://juejin.cn/post/7241875166887444541#heading-15)  
-[写的一般](https://juejin.cn/post/7080871202402598949#heading-1)  
-[规范你的前端团队](https://juejin.cn/post/7245674094493171770#heading-11)  
+参考链接
+[【V3 Admin Vite】教程六：前端项目规范](https://juejin.cn/post/7231771821832618043)
+[统一公司的项目规范](https://juejin.cn/post/7241875166887444541#heading-15)
+[写的一般](https://juejin.cn/post/7080871202402598949#heading-1)
+[规范你的前端团队](https://juejin.cn/post/7245674094493171770#heading-11)
