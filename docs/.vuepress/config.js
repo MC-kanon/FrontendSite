@@ -43,6 +43,7 @@ module.exports = {
           { text: "JavaScript", link: "javascript" },
           { text: "jQuery", link: "/jquery/" },
           // { text: "Node笔记", link: "/node/" },
+          { text: "vue", link: "/vue/" },
           { text: "Git", link: "/git/" },
           { text: "Typescript", link: "/typescript/" },
           // { text: "构建工具", items: [
