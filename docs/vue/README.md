@@ -114,3 +114,35 @@ const btnRef = ref(null)  // btnRef就代表了btn
 provide(/* 注入名 */ 'message', /* 值 */ 'hello!')
 const message = inject('message')
 ```
+
+# pinia
+
++ state：就是一个共同维护的状态(数据)，或者说是某一个时刻的快照
++ gettes：类似于计算属性
++ action：类似于method方法
+
+```
+import { defineStore } from 'pinia'
+
+// 定义
+export const useUserStore = defineStore('user', {
+  state: () => {
+    return {
+      username: ''
+    }
+  },
+  getters: {
+    upperName: (state) => state.username.toUpperCase()
+  },
+  actions: {
+    setUsername(newname: string) {
+      this.username = newname
+    }
+  }
+})
+
+使用
+const userStore = useUserStore()
+const { username, upperName } = storeToRefs(userStore)
+```
+
