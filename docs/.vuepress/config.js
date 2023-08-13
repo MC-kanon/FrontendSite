@@ -40,7 +40,7 @@ module.exports = {
         },
         nav: [
           { text: "HTML & CSS", link: "/html&css/" },
-          { text: "JavaScript", link: "javascript" },
+          { text: "JavaScript", link: "/javascript" },
           { text: "jQuery", link: "/jquery/" },
           // { text: "Node笔记", link: "/node/" },
           { text: "vue", link: "/vue/" },
