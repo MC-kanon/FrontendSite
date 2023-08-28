@@ -126,6 +126,20 @@ module.exports = {
 };
 
 ```
+ESLint 忽略代码
+```
+1 忽略代码块
+/*eslint-disable*/
+some code
+/*eslint-enable*/
+
+2 忽略某一行
+some code  // eslint-disable-line
+
+3 忽略下一行
+// eslint-disable-next-line
+some code
+```
 
 [解决Eslint 和 Prettier 之间的冲突](https://juejin.cn/post/7012160233061482532)
 
