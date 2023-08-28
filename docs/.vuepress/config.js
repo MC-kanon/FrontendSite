@@ -40,10 +40,10 @@ module.exports = {
         },
         nav: [
           { text: "HTML & CSS", link: "/html&css/" },
-          { text: "JavaScript", link: "/javascript" },
+          { text: "JavaScript", link: "/javascript/" },
           { text: "jQuery", link: "/jquery/" },
           // { text: "Node笔记", link: "/node/" },
-          { text: "vue", link: "/vue/" },
+          { text: "Vue", link: "/vue/" },
           { text: "Git", link: "/git/" },
           { text: "Typescript", link: "/typescript/" },
           // { text: "构建工具", items: [

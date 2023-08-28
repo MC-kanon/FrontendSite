@@ -184,3 +184,5 @@ function unique(arr) {
 }
 
 ```
+
+[https://www.bookstack.cn/read/es6-3rd/spilt.4.docs-class-extends.md](阮一峰 ECMAScript 6 (ES6) 标准入门教程 第三版)

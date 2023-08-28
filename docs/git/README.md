@@ -1,4 +1,4 @@
-# git 
+# git
 
 ## git基础知识介绍
 
@@ -74,7 +74,7 @@ git log --pretty=oneline --graph  以图的形式显示版本日志
 
 ```
 暂存区提交到本地仓库
-git commit -m "版本信息"   
+git commit -m "版本信息"
 git commit -am "版本信息"  相当于add+commit(将git跟踪的文件直接提交版本库，跳过暂存区，注意：新增的文件不会提交)
 git commit --amend -m '***' 修改上次提交的信息
 查询信息
@@ -104,7 +104,7 @@ git push origin --delete [branch-name] 删除远程分支
 git merge <branch-name>	将当前分支与指定分支进行合并
 
 查看上游分支
-git status 、git checkout <branch>
+git status 、git checkout <branch>、git branch -vv
 设置上游分支
 git branch --set-upstream-to=origin/main main   给本地main分支设置远程main分支作为上游分支(远程分支存在的情况)
 git push set-upsteam origin HEAD:main	远程分支不存在的情况
@@ -119,6 +119,7 @@ git checkout -b <branch-name> <remote-name> <branch-name>
 查询信息
 git remote -v  查看本地仓库关联的远程仓库url地址
 git remote add <remote-name> <url>  给远程仓库(url地址)取一个名字叫做remote-name
+git remote set-url [--push] <name> <newurl> [<oldurl>] 重新设置远程仓库的url
 git remote rename origin o  给远程仓库重命名
 git diff --shortstat "@{0 day ago}"  显示今天你写了多少行代码
 
@@ -185,11 +186,11 @@ git rebase upstream/mai  进行变基操作，同步代码
 
 参考目录：
 
-[阮一峰-常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)   	
-[阮一峰-ES6入门教程](https://es6.ruanyifeng.com/) 		
-[书栈网-Git命令大全](https://www.bookstack.cn/read/git-tutorial/docs-commands-git-stash.md)  
-[git常用命令](https://juejin.cn/post/6844903598522908686)  
-[各种工作场景的 git 指令大全](https://juejin.cn/post/7021023267028729887)  
+[阮一峰-常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
+[阮一峰-ES6入门教程](https://es6.ruanyifeng.com/)
+[书栈网-Git命令大全](https://www.bookstack.cn/read/git-tutorial/docs-commands-git-stash.md)
+[git常用命令](https://juejin.cn/post/6844903598522908686)
+[各种工作场景的 git 指令大全](https://juejin.cn/post/7021023267028729887)
 [廖雪峰Git教程](https://www.bookstack.cn/read/liaoxuefeng-git-2020/002dc8c001053b0b.md)
 [面试题|git秘籍--多人协作冲突](https://juejin.cn/post/6952752045405241358#heading-0)
 [git rebase，看这一篇就够了](https://juejin.cn/post/6969101234338791432)
