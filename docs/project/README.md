@@ -240,6 +240,10 @@ prettier
 1. 执行Prettier脚本，这是对代码进行格式化的;
 2. 执行eslint --fix操作，进行扫描，对eslint问题进行修复；
 3. 上述两项任务完成后将代码重新add进 stage 区，然后执行commit。
+
+如果上面不行的话，可以手动创建
+npx husky add .husky/pre-commit "npx lint-staged"     
+这句话的意思就是在pre-commit的时候得执行npx lint-staged
 ```
 [lint-staged仓库](https://github.com/okonet/lint-staged)
 
@@ -337,7 +341,8 @@ subject(必须)
 [Vite中使用Less](https://cn.vitejs.dev/guide/features.html#css)
 
 参考链接
-[【V3 Admin Vite】教程六：前端项目规范](https://juejin.cn/post/7231771821832618043)
-[统一公司的项目规范](https://juejin.cn/post/7241875166887444541#heading-15)
-[写的一般](https://juejin.cn/post/7080871202402598949#heading-1)
-[规范你的前端团队](https://juejin.cn/post/7245674094493171770#heading-11)
+[【V3 Admin Vite】教程六：前端项目规范](https://juejin.cn/post/7231771821832618043)  
+[统一公司的项目规范](https://juejin.cn/post/7241875166887444541#heading-15)  
+[写的一般](https://juejin.cn/post/7080871202402598949#heading-1)  
+[规范你的前端团队](https://juejin.cn/post/7245674094493171770#heading-11)  
+[项目规范](https://juejin.cn/post/7038143752036155428?searchId=2023082910320298DD1E596ABAF17B29C9#heading-6)  
