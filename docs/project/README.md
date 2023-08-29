@@ -246,11 +246,13 @@ prettier
 ## commitlint
 作用：规范git commit提交的信息
 安装：`npm install -D @commitlint/cli @commitlint/config-conventional`
-配置：项目目录下建`commitlint.config.js`
+配置：项目目录下建`.commitlintrc.json`
 使用：在.husky 中新建一个commit-msg
 ```
-. "$(dirname "$0")/_/husky.sh"
-npx --no-install commitlint --edit "$1"
+npx husky-init && npm install
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"' 
+INFO
+For Windows users, if you see the help message when running npx husky add ..., try node node_modules/husky/lib/bin add ... instead. This isn't an issue with husky code.
 ```
 ```javascript
 module.exports = {
