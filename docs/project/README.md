@@ -39,6 +39,16 @@ export default defineConfig({
 作用：代码类型检查
 安装：`npm install typescript @types/node --save-dev`（@types/node是node的类型）
 用法：在根目录新建`tsconfig.json`（ts的配置文件）,在`src`目录新建`typings.d.ts`(声明.vue单文件)
+```ts忽略文件
+单行忽略(添加到特定行的行前来忽略这一行的错误)
+// @ts-ignore
+
+跳过对某些文件的检查 (添加到该文件的首行才起作用)
+// @ts-nocheck
+
+对某些文件的检查
+// @ts-check
+```
 ```javascript
 tsconfig.json
 {
@@ -121,7 +131,8 @@ module.exports = {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
       '@typescript-eslint/ban-types': 'off',
-      "vue/multi-word-component-names": "off"   // 组件名可以为一个word
+      "vue/multi-word-component-names": "off",   // 组件名可以为一个word
+      "vue/valid-template-root": "off",  // 组件可以有多个根目录
     },
 };
 
