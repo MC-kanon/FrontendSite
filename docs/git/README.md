@@ -87,6 +87,8 @@ git commit --amend -m '***' 修改上次提交的信息
 git tag				   列出所有标签
 git tag -d [tag]		删除本地tag
 git tag v1.0		    创建标签
+git tag v1.0.0 039bf8b  给某个版本号打上标签
+git tag v1.0.0 039bf8b -m "add tags information" 给某个版本号打上标签（补充信息）
 git push <remote> v1.0	将标签推送到远程仓库中
 git push <remote> --tags	将本地所有的标签全部推送到远程仓库中
 git push <remote> :refs/tags/[tagName]	删除远程tag
@@ -178,7 +180,20 @@ rebase
 # 更新本地代码
 ```
 git fetch upstream   拉下远程代码
-git rebase upstream/mai  进行变基操作，同步代码
+git rebase upstream/main  进行变基操作，同步代码
+```
+
+# 清除git缓存，重新进入
+```
+# 0. 进入项目路径
+# 1. 清除本地当前的Git缓存
+git rm -r --cached .    ||    git rm -r --cached .eslintcache
+
+# 2. 应用.gitignore等本地配置文件重新建立Git索引
+git add .
+
+# 3. （可选）提交当前Git版本并备注说明
+git commit -m 'update .gitignore'
 ```
 
 # git插件
