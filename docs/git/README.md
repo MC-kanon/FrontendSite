@@ -53,7 +53,6 @@ git add <dir> 添加指定目录到暂存区，包括子目录
 git rm --cached <file>  将file文件从暂存区迁移到工作区 （未跟踪的状态，文件还在）
 git restore --staged <file>	 文件从staged -> unstage
 git rm -f <file>  强制删除文件
-git checkout -- <filename> 将工作区指定的文件恢复到上次commit的状态
 
 暂存区提交到本地仓库
 git commit -m "版本信息"
@@ -65,7 +64,10 @@ git push <远程仓库别名> <远程仓库分支>
 git status  查询当前工作区所有文件的状态
 git diff    比较工作区中当前文件和暂存区之间的差异，也就是修改之后还没有暂存的内容
 git diff --cache <file>  比较暂存区与上一版本的差异
+git diff HEAD HEAD~1 --stat   查看最近两次版本的修改代码行数信息
+git diff ab6c58e 9ae40e7  --stat  查看两次版本的修改代码行数信息
 git log 查看提交历史
+git log --stat 查看每个版本的改动行数
 git reflog 查看版本库（查看所有分支的所有操作记录，包括已经删除的）
 git log --pretty=oneline --graph  以图的形式显示版本日志
 ```
@@ -78,7 +80,7 @@ git commit -m "版本信息"
 git commit -am "版本信息"  相当于add+commit(将git跟踪的文件直接提交版本库，跳过暂存区，注意：新增的文件不会提交)
 git commit --amend -m '***' 修改上次提交的信息
 查询信息
-git diff --cache  比较暂存区与上一版本的差异
+git diff --cache  比较暂存区与上一版本的差异(等于 git diff --staged)
 git commit --amend <file1> <file2> 提交文件时，发现漏掉几个文件可以重新提交
 git commit -v  提交时显示所有diff信息
 git commit --amend -m '***' 修改上次提交的信息
@@ -101,9 +103,11 @@ git branch <branch-name>	  创建分支
 git checkout <branch-name>    切换到其他分支
 git checkout -b <branch-name> 新建并切换到新建分支
 git branch -d <branch-name>   删除本地分支
+git branch -D <branch-name>   强制删除本地分支（假如分支没有合并是不能删除的，所以得-D强制删除）
 git branch -dr <remote/branch> 删除远程分支（用这个）
 git push origin --delete [branch-name] 删除远程分支
 git merge <branch-name>	将当前分支与指定分支进行合并
+git merge --abort  Git 仓库处于冲突待解决的中间状态，所以如果你最终决定放弃这次 merge，使用这个命令
 
 查看上游分支
 git status 、git checkout <branch>、git branch -vv
@@ -154,6 +158,19 @@ git stash apply stash@{1}  恢复某个暂时保存的工作
 merge
 rebase
 将一个分支里提交的改变移到基底分支上重放一遍：git rebase <rebase-branch> <branch-name>，如git rebase master server，将特性分支server提交的改变在基底分支master上重演一遍；使用rebase操作最大的好处是像在单个分支上操作的，提交的修改历史也是一根线；如果想把基于一个特性分支上的另一个特性分支变基到其他分支上，可以使用--onto操作：git rebase --onto <rebase-branch> <feature branch> <sub-feature-branch>，如git rebase --onto master server client；使用rebase操作应该遵循的原则是：一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行rebase操作
+```
+
+## 撤销操作
+```
+git checkout -- <filename> 将工作区指定的文件恢复到上次commit的状态(取消工作区文件的修改，例如你修改了一个文件，但是没有add加入暂存区，这个时候可以通过这个命令取消修改，-- 很重要，没有--就是切换分支了)
+git reset HEAD <file>  将暂存区的内容还原到工作区里面，相当于取消git add
+
+```
+
+## 删除某个文件的操作
+```
+git rm test.txt
+git commit -m "remove test.txt"
 ```
 
 ## 冲突
