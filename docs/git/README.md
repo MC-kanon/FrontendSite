@@ -56,6 +56,7 @@ git rm -f <file>  强制删除文件
 
 暂存区提交到本地仓库
 git commit -m "版本信息"
+git commit --no-verify -m '1.0.0.0' (跳过校验)
 
 本地仓库提交到远程仓库
 git push <远程仓库别名> <远程仓库分支>
@@ -83,7 +84,7 @@ git commit --amend -m '***' 修改上次提交的信息
 git diff --cache  比较暂存区与上一版本的差异(等于 git diff --staged)
 git commit --amend <file1> <file2> 提交文件时，发现漏掉几个文件可以重新提交
 git commit -v  提交时显示所有diff信息
-git commit --amend -m '***' 修改上次提交的信息
+git commit --amend -m '***' 修改上次提交的信息(用当前的覆盖上一次提交的)
 
 打标签（用于特定结点，比如说版本上线）
 git tag				   列出所有标签
